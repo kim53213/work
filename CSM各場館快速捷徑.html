@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>場館快速捷徑</title>
+    <style>
+        input[type="text"] {
+            margin-right: 10px;
+            padding: 15px; /* 增加內邊距，讓輸入框看起來更大 */
+            font-size: 18px; /* 增加文字大小 */
+            width: 200px; /* 設置固定寬度 */
+        }
+
+        .radio-section {
+            margin-bottom: 30px;
+        }
+        .radio-group {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+        input[type="text"], button {
+            margin-right: 10px;
+            padding: 5px;
+        }
+        button {
+            font-size: 20px;
+            text-align: center;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .radio-group label {
+            font-size: 21px;
+            display: flex;
+            align-items: center;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSM各場館快速捷徑</h1>
+    <!-- 文字輸入框 -->
+        <h3><label for="textInput">&nbsp;&nbsp;輸入查詢 ID：</label>
+        <input type="text" id="textInput" placeholder="輸入查詢 ID">
+
+        <!-- 多個按鈕 -->
+        <button onclick="openUrl('index')">場館後台</button>
+        <button onclick="openUrl('profile')">前往此ID個人頁面</button>
+        <button onclick="openUrl('order')">前往此ID訂單頁面</button>
+        <button onclick="openUrl('membership')">前往此ID會籍設定</button>
+        <button onclick="openUrl('package')">前往此ID方案設定</button></h3>
+
+    <!-- 區塊 0 -->
+    <div class="radio-section">
+        <h2>&nbsp;&nbsp;測試環境</h2>
+        <div class="radio-group" id="group0">
+            <!-- JavaScript 會生成區塊0的選項 -->
+        </div>
+    </div>
+
+    <!-- 區塊 1 -->
+    <div class="radio-section">
+        <h2>&nbsp;&nbsp;Shiheng</h2>
+        <div class="radio-group" id="group1">
+            <!-- JavaScript 會生成區塊1的選項 -->
+        </div>
+    </div>
+
+    <!-- 區塊 2 -->
+    <div class="radio-section">
+        <h2>&nbsp;&nbsp;Tai</h2>
+        <div class="radio-group" id="group2">
+            <!-- JavaScript 會生成區塊2的選項 -->
+        </div>
+    </div>
+
+    <!-- 區塊 3 -->
+    <div class="radio-section">
+        <h2>&nbsp;&nbsp;Sharon</h2>
+        <div class="radio-group" id="group3">
+            <!-- JavaScript 會生成區塊3的選項 -->
+        </div>
+    </div>
+
+    
+
+
+    <script>
+        // 為每個區塊手動定義選項
+        const optionsGroup0 = [
+        { name: "Dev1", value: "dev1-plus" },
+        { name: "Demo", value: "demo-plus" },
+        ];
+
+        const optionsGroup1 = [
+        { name: "騎士", value: "knight-plus" },
+            { name: "植健身", value: "fitplantgym-plus" },
+            { name: "悍草", value: "handsup-plus" },
+            { name: "鐵人工廠 v2.0", value: "waypoint" },
+            { name: "和怡", value: "surmount-plus" },
+            { name: "極進化 v2.0", value: "xrfitness" },
+            { name: "三健客", value: "3musclers-plus" },
+            { name: "ACER v2.0", value: "acerfitness" },
+            { name: "健身計畫 v2.0", value: "projectfit" },
+            { name: "Rich", value: "rich-plus" },
+            { name: "Youth v2.0", value: "youthfitness" },
+            { name: "FP", value: "fptaiwan-plus" },
+            { name: "Refine v2.0", value: "refine" },
+            { name: "Eros", value: "eros-plus" },
+            { name: "洛克", value: "rocksgym-plus" },
+            { name: "渴望", value: "aspire-plus" },
+            { name: "效率讀書", value: "esc-plus" },
+            { name: "MyTRX", value: "myfitness-plus" },
+            { name: "好好健身", value: "howhowgym-plus" },
+            { name: "Oneshot", value: "oneshot-plus" },
+            { name: "角鬥士", value: "pagegym-plus" },
+            { name: "Wo5", value: "wo5-plus" },
+            { name: "Air Fitness", value: "airfitness" }
+        ];
+        
+        const optionsGroup2 = [
+        { name: "The Key", value: "thekey-plus" },
+            { name: "So fit", value: "sofit-plus" },
+            { name: "2h v2.0", value: "2h" },
+            { name: "健身聯盟 v2.0", value: "fitnessleague" },
+            { name: "比活力", value: "bsports-plus" },
+            { name: "健身星球 v2.0", value: "starfitness" },
+            { name: "大無限", value: "infinitefit-plus" },
+            { name: "霏利健身", value: "freeing-plus" },
+            { name: "JUNGLE CENTER", value: "junglecenter-plus" },
+            { name: "AJoice", value: "ajoice-plus" },
+            { name: "PQ", value: "pqfitness-plus" },
+            { name: "健森房", value: "junglegym-plus" },
+            { name: "運動吧", value: "goworkout-plus" },
+            { name: "芳鄰健身 v2.0", value: "familygym" },
+            { name: "酷地", value: "coolday-plus" },
+            { name: "Snowsensei", value: "snowsensei-plus" },
+            { name: "山・健身", value: "mountain-plus" },
+            { name: "奧美伽", value: "omega-plus" },
+            { name: "典陸教育", value: "danlu-plus" },
+            { name: "震撼健身", value: "hillshock-plus" },
+            { name: "瑭琪經筋瑜珈", value: "ginyoga-plus" }
+        ];
+        
+        const optionsGroup3 = [
+        { name: "聚廠 v2.0", value: "gathersport" },
+            { name: "UFC", value: "ufcgym-plus" },
+            { name: "扭轉", value: "newonefit-plus" },
+            { name: "運動學", value: "fitology-plus" },
+            { name: "Force", value: "force-plus" },
+            { name: "力宴", value: "harfez-plus" },
+            { name: "300壯士", value: "300supergym-plus" },
+            { name: "農夫走路 v2.0", value: "farmerswalk" },
+            { name: "K GYM v2.0", value: "kgym" },
+            { name: "秋健身", value: "chillfitness-plus" },
+            { name: "MYWAY", value: "mywayfitness-plus" },
+            { name: "時尚 v2.0", value: "sis" },
+            { name: "健身時代 v2.0", value: "gymneration" },
+            { name: "戰神 v2.0", value: "gymmars" },
+            { name: "Den Yoga", value: "denyoga-plus" },
+            { name: "OSPACE", value: "ospace-plus" },
+            { name: "史詩", value: "epyllion-plus" },
+            { name: "潘洛斯健身學苑", value: "penrosefa-plus" },
+            { name: "Brick Box Fitness", value: "brickbox-plus" },
+            { name: "如一生活", value: "uone-plus" },
+            { name: "Jinlife", value: "jinlife-plus" }
+        ];
+
+        // 將選項生成到指定的區塊
+        function populateOptions(options, groupId) {
+            const radioGroup = document.getElementById(groupId);
+            options.forEach(option => {
+                const label = document.createElement("label");
+                label.style.display = "flex";
+                label.style.alignItems = "center";
+                
+                const radio = document.createElement("input");
+                radio.type = "radio";
+                radio.name = "option";  // 設定為相同的 name，表示這些選項屬於同一組
+                radio.value = option.value;
+                
+                label.appendChild(radio);
+                label.appendChild(document.createTextNode(" " + option.name));
+                radioGroup.appendChild(label);
+            });
+        }
+
+        // 將選項填入各自的區塊
+        populateOptions(optionsGroup0, "group0");
+        populateOptions(optionsGroup1, "group1");
+        populateOptions(optionsGroup2, "group2");
+        populateOptions(optionsGroup3, "group3");
+
+        function openUrl(pageType) {
+            const selectedOption = document.querySelector('input[name="option"]:checked');
+            const tradeId = document.getElementById("textInput").value;
+
+            if (!selectedOption) {
+                alert("請選擇一個選項");
+                return;
+            }
+
+
+
+
+            let url;
+            if (tradeId !== "") {
+
+                if (pageType === 'index') {
+                    url = `https://${selectedOption.value}.fitbutler.tw/`;
+                } else if (pageType === 'profile') {
+                    url = `https://${selectedOption.value}.fitbutler.tw/?c=member&m=detail&account=${tradeId}`;
+                } else if (pageType === 'order') {
+                    url = `https://${selectedOption.value}.fitbutler.tw/?c=financial&m=detail&trade_id=${tradeId}`;
+                } else if (pageType === 'membership') {
+                    url = `https://${selectedOption.value}.fitbutler.tw/?c=membership&m=wizard&membership_id=${tradeId}`;
+                } else if (pageType === 'package') {
+                    url = `https://${selectedOption.value}.fitbutler.tw/?c=package&m=wizard&package_id=${tradeId}`;
+                }
+            }
+            else{
+                if (pageType === 'index') {
+                    url = `https://${selectedOption.value}.fitbutler.tw/`;
+                } else if (pageType === 'profile') {
+                    url = `https://${selectedOption.value}.fitbutler.tw/?c=member&m=detail&account=0963312386`;
+                } else if (pageType === 'order') {
+                    url = `https://${selectedOption.value}.fitbutler.tw/?c=financial&m=admin`;
+                } else if (pageType === 'membership') {
+                    url = `https://${selectedOption.value}.fitbutler.tw/?c=membership&m=admin`;
+                } else if (pageType === 'package') {
+                    url = `https://${selectedOption.value}.fitbutler.tw/?c=package&m=admin`;
+                }
+            }  
+
+            
+            window.open(url, '_blank'); 
+        }
+    </script>
+
+</body>
+</html>
